@@ -1,0 +1,585 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Marketing Agency client profile."
+  >
+
+  <title>Client Profile — Marketing Agency</title>
+
+</head>
+
+
+<body class="profile-body">
+
+
+  <!-- HEADER -->
+
+  <header class="site-header profile-header">
+
+    <div class="container header-container">
+
+      <a
+        class="logo"
+        href="./index.html"
+      >
+        AGENCY<span>/</span>
+      </a>
+
+
+      <a
+        class="profile-back-link"
+        href="./index.html"
+      >
+        ← Back to website
+      </a>
+
+    </div>
+
+  </header>
+
+
+
+  <main class="profile-page">
+
+
+    <!-- INTRO -->
+
+    <section class="profile-hero">
+
+      <div class="container">
+
+        <p class="section-kicker">
+
+          <span>
+            02 /
+          </span>
+
+          CLIENT AREA
+
+        </p>
+
+
+        <h1 class="profile-title">
+
+          Your project.
+
+          <span>
+            One place.
+          </span>
+
+        </h1>
+
+
+        <p class="profile-intro">
+
+          Manage your contact information,
+          project details and selected services.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PROFILE -->
+
+    <section class="profile-content">
+
+      <div class="container profile-layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="profile-sidebar">
+
+          <div
+            class="profile-avatar"
+            id="profile-avatar"
+          >
+            A
+          </div>
+
+
+          <div>
+
+            <p class="profile-sidebar-label">
+              Client
+            </p>
+
+            <h2
+              class="profile-client-name"
+              id="profile-name"
+            >
+              Client
+            </h2>
+
+            <p
+              class="profile-company"
+              id="profile-company"
+            >
+              Company
+            </p>
+
+          </div>
+
+
+          <button
+            class="primary-button"
+            id="edit-profile-button"
+            type="button"
+          >
+            Edit profile
+          </button>
+
+        </aside>
+
+
+
+        <!-- VIEW MODE -->
+
+        <div
+          class="profile-main"
+          id="profile-view"
+        >
+
+
+          <!-- CONTACT -->
+
+          <div class="profile-section">
+
+            <div class="profile-section-heading">
+
+              <span>
+                01
+              </span>
+
+              <h3>
+                Contact information
+              </h3>
+
+            </div>
+
+
+            <div class="profile-data-grid">
+
+              <div class="profile-data-item">
+
+                <span>
+                  Name
+                </span>
+
+                <strong id="view-name"></strong>
+
+              </div>
+
+
+              <div class="profile-data-item">
+
+                <span>
+                  Company
+                </span>
+
+                <strong id="view-company"></strong>
+
+              </div>
+
+
+              <div class="profile-data-item">
+
+                <span>
+                  Email
+                </span>
+
+                <strong id="view-email"></strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- PROJECT -->
+
+          <div class="profile-section">
+
+            <div class="profile-section-heading">
+
+              <span>
+                02
+              </span>
+
+              <h3>
+                Project
+              </h3>
+
+            </div>
+
+
+            <div class="profile-data-grid">
+
+              <div class="profile-data-item">
+
+                <span>
+                  Status
+                </span>
+
+                <strong
+                  class="project-status"
+                  id="view-status"
+                ></strong>
+
+              </div>
+
+
+              <div class="profile-data-item">
+
+                <span>
+                  Budget
+                </span>
+
+                <strong id="view-budget"></strong>
+
+              </div>
+
+
+              <div class="profile-data-item">
+
+                <span>
+                  Timeline
+                </span>
+
+                <strong id="view-timeline"></strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- SERVICES -->
+
+          <div class="profile-section">
+
+            <div class="profile-section-heading">
+
+              <span>
+                03
+              </span>
+
+              <h3>
+                Selected services
+              </h3>
+
+            </div>
+
+
+            <div
+              class="profile-services"
+              id="view-services"
+            ></div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- EDIT MODE -->
+
+        <form
+          class="profile-edit-form"
+          id="profile-edit-form"
+          hidden
+        >
+
+
+          <div class="profile-section">
+
+            <div class="profile-section-heading">
+
+              <span>
+                01
+              </span>
+
+              <h3>
+                Contact information
+              </h3>
+
+            </div>
+
+
+            <label>
+
+              Name
+
+              <input
+                id="edit-name"
+                type="text"
+                required
+              >
+
+            </label>
+
+
+            <label>
+
+              Company
+
+              <input
+                id="edit-company"
+                type="text"
+                required
+              >
+
+            </label>
+
+
+            <label>
+
+              Email
+
+              <input
+                id="edit-email"
+                type="email"
+                required
+              >
+
+            </label>
+
+          </div>
+
+
+
+          <div class="profile-section">
+
+            <div class="profile-section-heading">
+
+              <span>
+                02
+              </span>
+
+              <h3>
+                Project details
+              </h3>
+
+            </div>
+
+
+            <label>
+
+              Project status
+
+              <select id="edit-status">
+
+                <option value="Discovery">
+                  Discovery
+                </option>
+
+                <option value="Strategy phase">
+                  Strategy phase
+                </option>
+
+                <option value="Production">
+                  Production
+                </option>
+
+                <option value="Active campaign">
+                  Active campaign
+                </option>
+
+              </select>
+
+            </label>
+
+
+            <label>
+
+              Budget
+
+              <select id="edit-budget">
+
+                <option value="$1,000 – $3,000">
+                  $1,000 – $3,000
+                </option>
+
+                <option value="$3,000 – $7,000">
+                  $3,000 – $7,000
+                </option>
+
+                <option value="$7,000+">
+                  $7,000+
+                </option>
+
+              </select>
+
+            </label>
+
+
+            <label>
+
+              Timeline
+
+              <select id="edit-timeline">
+
+                <option value="ASAP">
+                  ASAP
+                </option>
+
+                <option value="1–3 months">
+                  1–3 months
+                </option>
+
+                <option value="3+ months">
+                  3+ months
+                </option>
+
+              </select>
+
+            </label>
+
+          </div>
+
+
+
+          <div class="profile-section">
+
+            <div class="profile-section-heading">
+
+              <span>
+                03
+              </span>
+
+              <h3>
+                Services
+              </h3>
+
+            </div>
+
+
+            <div class="profile-checkboxes">
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="profile-service"
+                  value="Strategy"
+                >
+                Strategy
+              </label>
+
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="profile-service"
+                  value="Social Media"
+                >
+                Social Media
+              </label>
+
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="profile-service"
+                  value="Paid Ads"
+                >
+                Paid Ads
+              </label>
+
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="profile-service"
+                  value="Content"
+                >
+                Content
+              </label>
+
+
+              <label>
+                <input
+                  type="checkbox"
+                  name="profile-service"
+                  value="SEO"
+                >
+                SEO
+              </label>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="profile-form-actions">
+
+            <button
+              class="primary-button"
+              type="submit"
+            >
+              Save changes
+            </button>
+
+
+            <button
+              class="secondary-button"
+              id="cancel-edit-button"
+              type="button"
+            >
+              Cancel
+            </button>
+
+          </div>
+
+        </form>
+
+
+
+        <p
+          class="profile-success-message"
+          id="profile-success-message"
+          role="status"
+          aria-live="polite"
+          hidden
+        >
+          Profile successfully updated.
+        </p>
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <script
+    type="module"
+    src="/src/profile.js"
+  ></script>
+
+
+</body>
+
+</html>
