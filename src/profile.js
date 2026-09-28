@@ -1,5 +1,11 @@
 import './style.css'
+import {
+  initI18n,
+  t
+} from './i18n.js'
 
+
+initI18n()
 
 // =========================================
 // SETTINGS
@@ -177,7 +183,55 @@ function saveProfile(profile) {
 // =========================================
 // RENDER
 // =========================================
+const statusTranslationKeys = {
 
+  'Discovery':
+    'profile.status.discovery',
+
+  'Strategy phase':
+    'profile.status.strategy',
+
+  'Production':
+    'profile.status.production',
+
+  'Active campaign':
+    'profile.status.active'
+
+}
+
+
+const timelineTranslationKeys = {
+
+  'ASAP':
+    'profile.timeline.asap',
+
+  '1–3 months':
+    'profile.timeline.oneThree',
+
+  '3+ months':
+    'profile.timeline.threePlus'
+
+}
+
+
+const serviceTranslationKeys = {
+
+  'Strategy':
+    'services.strategy.title',
+
+  'Social Media':
+    'services.social.title',
+
+  'Paid Ads':
+    'estimator.ads',
+
+  'Content':
+    'services.content.title',
+
+  'SEO':
+    'estimator.seo'
+
+}
 function renderProfile(profile) {
 
   profileName.textContent =
@@ -197,13 +251,21 @@ function renderProfile(profile) {
     profile.email
 
   viewStatus.textContent =
-    profile.status
+  t(
+    statusTranslationKeys[
+      profile.status
+    ]
+  )
 
   viewBudget.textContent =
     profile.budget
 
   viewTimeline.textContent =
-    profile.timeline
+  t(
+    timelineTranslationKeys[
+      profile.timeline
+    ]
+  )
 
 
   const firstLetter =
@@ -226,7 +288,9 @@ function renderProfile(profile) {
       document.createElement('span')
 
     emptyMessage.textContent =
-      'No services selected'
+  t(
+    'profile.noServices'
+  )
 
     viewServices.appendChild(
       emptyMessage
@@ -243,8 +307,16 @@ function renderProfile(profile) {
       const tag =
         document.createElement('span')
 
-      tag.textContent =
-        service
+      const translationKey =
+  serviceTranslationKeys[
+    service
+  ]
+
+
+tag.textContent =
+  translationKey
+    ? t(translationKey)
+    : service
 
       viewServices.appendChild(tag)
 
@@ -448,7 +520,16 @@ editForm.addEventListener(
 
     saveProfile(profile)
 
-    renderProfile(profile)
+    window.addEventListener(
+  'languagechange',
+  function () {
+
+    renderProfile(
+      loadProfile()
+    )
+
+  }
+)
 
     closeEditMode()
 

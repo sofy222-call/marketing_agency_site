@@ -1,10 +1,17 @@
 <!doctype html>
 
-<html lang="ru">
+<html
+  lang="en"
+  translate="no"
+  class="notranslate"
+>
 
 <head>
   <meta charset="UTF-8">
-
+<meta
+  name="google"
+  content="notranslate"
+>
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0"
@@ -27,48 +34,104 @@
     <a
       class="logo"
       href="#hero"
-      aria-label="Go to homepage"
     >
       AGENCY<span>/</span>
     </a>
 
-   <nav
-  class="main-nav"
-  aria-label="Main navigation"
->
 
-  <a href="#services">
-    Services
-  </a>
-
-  <a href="#cases">
-    Work
-  </a>
-
-  <a href="#process">
-    Process
-  </a>
-
-  <a href="./profile.html">
-    Profile
-  </a>
-
-  <a href="#contact">
-    Contact
-  </a>
-
-</nav>
-
-    <a
-      class="header-cta"
-      href="#contact"
+    <nav
+      class="main-nav"
+      id="main-nav"
+      aria-label="Main navigation"
     >
-      <span>Start a project</span>
 
-      <span aria-hidden="true">
-        ↗
-      </span>
-    </a>
+      <a href="#services">
+        Services
+      </a>
+
+      <a href="#cases">
+        Work
+      </a>
+
+      <a href="#process">
+        Process
+      </a>
+
+      <a href="./profile.html">
+        Profile
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
+    </nav>
+
+
+    <div class="header-actions">
+
+      <div
+        class="language-switcher"
+        aria-label="Language"
+      >
+
+        <button
+          type="button"
+          class="language-button"
+          data-lang="en"
+        >
+          EN
+        </button>
+
+        <button
+          type="button"
+          class="language-button"
+          data-lang="ru"
+        >
+          RU
+        </button>
+
+        <button
+          type="button"
+          class="language-button"
+          data-lang="kz"
+        >
+          KZ
+        </button>
+
+      </div>
+
+
+      <a
+        class="header-cta"
+        href="#contact"
+      >
+
+        <span>
+          Start a project
+        </span>
+
+        <span>
+          ↗
+        </span>
+
+      </a>
+
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
 
   </div>
 
@@ -1127,134 +1190,215 @@
     </section>
 
 
-    <!-- CONTACT -->
-    <section
-      class="contact"
-      id="contact"
+    <<!-- CONTACT -->
+
+<section
+  class="contact"
+  id="contact"
+>
+
+  <div class="container">
+
+    <p class="section-kicker">
+
+      <span>
+        08 /
+      </span>
+
+      HAVE A PROJECT?
+
+    </p>
+
+
+    <h2>
+      Let's make something impossible to scroll past.
+    </h2>
+
+
+    <form
+      class="contact-form"
+      id="contact-form"
+      novalidate
     >
 
-      <div class="container">
 
-        <p class="section-label">
-          Have a project?
-        </p>
+      <label class="contact-field">
 
-        <h2>
-          Let's make something impossible to scroll past.
-        </h2>
+        <span class="contact-name-label">
+          Name
+        </span>
 
+        <input
+          id="contact-name"
+          type="text"
+          name="name"
+          placeholder="Your name"
+        >
 
-        <form class="contact-form">
+        <small
+          class="form-error"
+          data-error-for="name"
+        ></small>
 
-          <label>
-
-            Name
-
-            <input
-              type="text"
-              name="name"
-              placeholder="Your name"
-            >
-
-          </label>
+      </label>
 
 
-          <label>
 
-            Email
+      <label class="contact-field">
 
-            <input
-              type="email"
-              name="email"
-              placeholder="you@company.com"
-            >
+        <span class="contact-email-label">
+          Email
+        </span>
 
-          </label>
+        <input
+          id="contact-email"
+          type="email"
+          name="email"
+          placeholder="you@company.com"
+        >
 
+        <small
+          class="form-error"
+          data-error-for="email"
+        ></small>
 
-          <label>
-
-            Project type
-
-            <select name="project-type">
-
-              <option value="">
-                Select a service
-              </option>
-
-              <option value="strategy">
-                Strategy
-              </option>
-
-              <option value="social">
-                Social Media
-              </option>
-
-              <option value="performance">
-                Performance Marketing
-              </option>
-
-              <option value="content">
-                Content Production
-              </option>
-
-            </select>
-
-          </label>
+      </label>
 
 
-          <label>
 
-            Budget
+      <label class="contact-field">
 
-            <select name="budget">
+        <span class="contact-project-label">
+          Project type
+        </span>
 
-              <option value="">
-                Select budget
-              </option>
+        <select
+          id="contact-project"
+          name="project"
+        >
 
-              <option value="small">
-                $1,000 – $3,000
-              </option>
+          <option value="">
+            Select a service
+          </option>
 
-              <option value="medium">
-                $3,000 – $7,000
-              </option>
+          <option value="strategy">
+            Strategy
+          </option>
 
-              <option value="large">
-                $7,000+
-              </option>
+          <option value="social">
+            Social Media
+          </option>
 
-            </select>
+          <option value="performance">
+            Performance Marketing
+          </option>
 
-          </label>
+          <option value="content">
+            Content Production
+          </option>
+
+        </select>
+
+        <small
+          class="form-error"
+          data-error-for="project"
+        ></small>
+
+      </label>
 
 
-          <label>
 
-            Tell us about your project
+      <label class="contact-field">
 
-            <textarea
-              name="message"
-              rows="6"
-              placeholder="Project details..."
-            ></textarea>
+        <span class="contact-budget-label">
+          Budget
+        </span>
 
-          </label>
+        <select
+          id="contact-budget"
+          name="budget"
+        >
+
+          <option value="">
+            Select budget
+          </option>
+
+          <option value="small">
+            $1,000 – $3,000
+          </option>
+
+          <option value="medium">
+            $3,000 – $7,000
+          </option>
+
+          <option value="large">
+            $7,000+
+          </option>
+
+        </select>
+
+        <small
+          class="form-error"
+          data-error-for="budget"
+        ></small>
+
+      </label>
 
 
-          <button
-            type="button"
-            class="primary-button"
-          >
-            Send request
-          </button>
 
-        </form>
+      <label class="contact-field">
 
-      </div>
+        <span class="contact-message-label">
+          Tell us about your project
+        </span>
 
-    </section>
+        <textarea
+          id="contact-message"
+          name="message"
+          rows="6"
+          placeholder="Project details..."
+        ></textarea>
+
+        <small
+          class="form-error"
+          data-error-for="message"
+        ></small>
+
+      </label>
+
+
+
+      <button
+        class="primary-button contact-submit"
+        type="submit"
+      >
+
+        <span class="contact-submit-text">
+          Send request
+        </span>
+
+        <span>
+          ↗
+        </span>
+
+      </button>
+
+    </form>
+
+
+
+    <p
+      class="contact-success"
+      id="contact-success"
+      role="status"
+      hidden
+    >
+      Request sent. We'll be in touch.
+    </p>
+
+  </div>
+
+</section>
 
 
   </main>
