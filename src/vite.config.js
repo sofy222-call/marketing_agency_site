@@ -1,16 +1,12 @@
 import { defineConfig } from 'vite'
-
 import { resolve } from 'path'
 
-
 export default defineConfig({
-  base: 
-  '/marketing_agency_site/',
+
+  base: '/marketing_agency_site/',
 
   build: {
-
     rollupOptions: {
-
       input: {
 
         main:
@@ -26,9 +22,7 @@ export default defineConfig({
           )
 
       }
-
     }
-
   }
 
 })
