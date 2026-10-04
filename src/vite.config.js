@@ -4,6 +4,8 @@ import { resolve } from 'path'
 
 
 export default defineConfig({
+  base: 
+  '/marketing_agency_site/',
 
   build: {
 
