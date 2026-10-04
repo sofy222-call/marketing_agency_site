@@ -3,7 +3,16 @@ import {
   initI18n,
   t
 } from './i18n.js'
+import { gsap } from 'gsap'
 
+import {
+  ScrollTrigger
+} from 'gsap/ScrollTrigger'
+
+
+gsap.registerPlugin(
+  ScrollTrigger
+)
 
 initI18n()
 
@@ -781,7 +790,550 @@ if (contactForm) {
   )
 
 }
+  // =========================================
+  // HERO PARALLAX
+  // =========================================
 
+  const heroObject =
+    document.querySelector(
+      '.hero-object'
+    )
+
+
+  if (heroObject) {
+
+    const heroMedia =
+      gsap.matchMedia()
+
+
+    heroMedia.add(
+      '(min-width: 901px)',
+      function () {
+
+        gsap.to(
+          heroObject,
+
+          {
+            yPercent:
+              10,
+
+            ease:
+              'none',
+
+            scrollTrigger: {
+
+              trigger:
+                '.hero',
+
+              start:
+                'top top',
+
+              end:
+                'bottom top',
+
+              scrub:
+                1
+
+            }
+
+          }
+        )
+
+      }
+    )
+
+  }
+// =========================================
+// MOTION
+// =========================================
+
+function initMotion() {
+
+  const reduceMotion =
+    window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
+
+
+  if (reduceMotion) {
+
+    gsap.set(
+      [
+        '.hero .section-kicker',
+        '.hero-title span',
+        '.hero-description',
+        '.hero .primary-button',
+        '.hero-object',
+        '.hero-media-meta'
+      ],
+      {
+        clearProps: 'all'
+      }
+    )
+
+    return
+
+  }
+
+
+  // =========================================
+  // HERO
+  // =========================================
+
+  const heroTimeline =
+    gsap.timeline({
+      defaults: {
+        ease: 'power3.out'
+      }
+    })
+
+
+  heroTimeline
+
+    .fromTo(
+      '.hero .section-kicker',
+      {
+        opacity: 0,
+        y: 20
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.45,
+        clearProps:
+          'opacity,visibility,transform'
+      }
+    )
+
+    .fromTo(
+      '.hero-title span',
+      {
+        opacity: 0,
+        y: 70
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.75,
+        stagger: 0.09,
+        clearProps:
+          'opacity,visibility,transform'
+      },
+      '-=0.1'
+    )
+
+    .fromTo(
+      '.hero-description',
+      {
+        opacity: 0,
+        y: 25
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.55,
+        clearProps:
+          'opacity,visibility,transform'
+      },
+      '-=0.3'
+    )
+
+    .fromTo(
+      '.hero .primary-button',
+      {
+        opacity: 0,
+        y: 20
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        clearProps:
+          'opacity,visibility,transform'
+      },
+      '-=0.35'
+    )
+
+    .fromTo(
+      '.hero-object',
+      {
+        opacity: 0,
+        scale: 0.82,
+        rotation: -16
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        rotation: -10,
+        duration: 0.9,
+        ease: 'expo.out'
+      },
+      '-=0.7'
+    )
+
+    .fromTo(
+      '.hero-media-meta',
+      {
+        opacity: 0,
+        y: 12
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        clearProps:
+          'opacity,visibility,transform'
+      },
+      '-=0.35'
+    )
+
+
+  // =========================================
+  // SIMPLE SCROLL REVEALS
+  // =========================================
+
+  const revealElements =
+    gsap.utils.toArray(
+      `
+      .stat-item,
+      .service-row,
+      .case-project,
+      .process-step,
+      .estimator-group
+      `
+    )
+
+
+  revealElements.forEach(
+    function (element) {
+
+      gsap.fromTo(
+        element,
+        {
+          opacity: 0,
+          y: 35
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.65,
+          ease: 'power3.out',
+
+          clearProps:
+            'opacity,visibility,transform',
+
+          scrollTrigger: {
+            trigger: element,
+            start: 'top 88%',
+            once: true
+          }
+        }
+      )
+
+    }
+  )
+
+
+  // =========================================
+  // MANIFESTO WOW
+  // =========================================
+
+  const manifesto =
+    document.querySelector(
+      '.manifesto'
+    )
+
+
+  if (manifesto) {
+
+    const manifestoTitle =
+      manifesto.querySelector(
+        'h2'
+      )
+
+    const manifestoLabel =
+      manifesto.querySelector(
+        '.section-label'
+      )
+
+    const manifestoMedia =
+      gsap.matchMedia()
+
+
+    // DESKTOP
+
+    manifestoMedia.add(
+      '(min-width: 901px)',
+      function () {
+
+        gsap.fromTo(
+          manifesto,
+          {
+            backgroundColor:
+              '#0A0A0A',
+
+            color:
+              '#F2F0EA'
+          },
+          {
+            backgroundColor:
+              '#F2F0EA',
+
+            color:
+              '#0A0A0A',
+
+            ease:
+              'none',
+
+            scrollTrigger: {
+              trigger:
+                manifesto,
+
+              start:
+                'top 85%',
+
+              end:
+                'top 25%',
+
+              scrub:
+                1
+            }
+          }
+        )
+
+
+        if (manifestoTitle) {
+
+          gsap.fromTo(
+            manifestoTitle,
+            {
+              scale:
+                0.78,
+
+              opacity:
+                0.35
+            },
+            {
+              scale:
+                1,
+
+              opacity:
+                1,
+
+              ease:
+                'none',
+
+              scrollTrigger: {
+                trigger:
+                  manifesto,
+
+                start:
+                  'top 80%',
+
+                end:
+                  'center 55%',
+
+                scrub:
+                  1
+              }
+            }
+          )
+
+        }
+
+
+        if (manifestoLabel) {
+
+          gsap.fromTo(
+            manifestoLabel,
+            {
+              opacity:
+                0
+            },
+            {
+              opacity:
+                1,
+
+              duration:
+                0.5,
+
+              scrollTrigger: {
+                trigger:
+                  manifesto,
+
+                start:
+                  'top 65%',
+
+                once:
+                  true
+              }
+            }
+          )
+
+        }
+
+      }
+    )
+
+
+    // MOBILE
+
+    manifestoMedia.add(
+      '(max-width: 900px)',
+      function () {
+
+        if (manifestoTitle) {
+
+          gsap.fromTo(
+            manifestoTitle,
+            {
+              opacity:
+                0,
+
+              y:
+                45
+            },
+            {
+              opacity:
+                1,
+
+              y:
+                0,
+
+              duration:
+                0.75,
+
+              ease:
+                'power3.out',
+
+              clearProps:
+                'opacity,visibility,transform',
+
+              scrollTrigger: {
+                trigger:
+                  manifesto,
+
+                start:
+                  'top 82%',
+
+                once:
+                  true
+              }
+            }
+          )
+
+        }
+
+      }
+    )
+
+  }
+  // =========================================
+  // CONTACT REVEAL
+  // =========================================
+
+  const contact =
+    document.querySelector(
+      '.contact'
+    )
+
+
+  if (contact) {
+
+    const contactItems =
+      contact.querySelectorAll(
+        `
+        .section-kicker,
+        h2,
+        .contact-form > *
+        `
+      )
+
+
+    gsap.fromTo(
+      contactItems,
+
+      {
+        opacity:
+          0,
+
+        y:
+          30
+      },
+
+      {
+        opacity:
+          1,
+
+        y:
+          0,
+
+        duration:
+          0.6,
+
+        stagger:
+          0.07,
+
+        ease:
+          'power3.out',
+
+        scrollTrigger: {
+
+          trigger:
+            contact,
+
+          start:
+            'top 82%',
+
+          once:
+            true
+
+        },
+
+        clearProps:
+          'opacity,visibility,transform'
+
+      }
+    )
+
+  }
+}
+
+// =========================================
+// START MOTION
+// =========================================
+
+function startMotion() {
+
+  initMotion()
+
+  ScrollTrigger.refresh()
+
+}
+
+
+if (
+  document.fonts
+  && document.fonts.ready
+) {
+
+  document.fonts.ready.then(
+    function () {
+
+      requestAnimationFrame(
+        startMotion
+      )
+
+    }
+  )
+
+} else {
+
+  requestAnimationFrame(
+    startMotion
+  )
+
+}
 // =========================================
 // PROJECT START
 // =========================================

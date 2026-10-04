@@ -3272,3 +3272,115 @@ body.menu-open {
   }
 
 }
+/* =========================================
+   MOTION POLISH
+========================================= */
+
+.manifesto {
+  overflow: hidden;
+}
+
+
+.hero-object {
+  transform-origin:
+    center center;
+}
+
+
+.case-project,
+.service-row,
+.process-step,
+.estimator-result {
+  backface-visibility:
+    hidden;
+}
+
+
+/* Respect accessibility settings */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+
+  html {
+    scroll-behavior:
+      auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+
+    scroll-behavior:
+      auto !important;
+  }
+
+}
+/* =========================================
+   FINAL MOTION POLISH
+========================================= */
+
+.manifesto {
+  overflow: hidden;
+}
+
+
+.manifesto h2 {
+  transform-origin:
+    center center;
+}
+
+
+.hero-object {
+  transform-origin:
+    center center;
+}
+
+
+.case-project,
+.service-row,
+.process-step,
+.estimator-group {
+  backface-visibility:
+    hidden;
+}
+
+
+/* REDUCED MOTION */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+
+  html {
+    scroll-behavior:
+      auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+
+    scroll-behavior:
+      auto !important;
+  }
+
+}
