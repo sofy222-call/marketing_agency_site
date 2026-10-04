@@ -1335,6 +1335,34 @@ if (
 
 }
 // =========================================
+// REFRESH MOTION AFTER LAYOUT CHANGES
+// =========================================
+
+window.addEventListener(
+  'languagechange',
+  function () {
+
+    requestAnimationFrame(
+      function () {
+
+        ScrollTrigger.refresh()
+
+      }
+    )
+
+  }
+)
+
+
+window.addEventListener(
+  'resize',
+  function () {
+
+    ScrollTrigger.refresh()
+
+  }
+)
+// =========================================
 // PROJECT START
 // =========================================
 
