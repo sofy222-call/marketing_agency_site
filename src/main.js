@@ -1,4 +1,16 @@
 import './style.css'
+import serviceStrategy from './assets/service-strategy.webp'
+import serviceSocial from './assets/service-social.webp'
+import servicePerformance from './assets/service-performance.webp'
+import serviceContent from './assets/service-content.webp'
+import serviceDigital from './assets/service-digital.webp'
+const serviceImages = {
+  strategy: serviceStrategy,
+  social: serviceSocial,
+  performance: servicePerformance,
+  content: serviceContent,
+  digital: serviceDigital
+}
 import {
   initI18n,
   t
@@ -41,6 +53,22 @@ function activateService(row) {
 
   const service =
     row.dataset.service
+
+    const previewImage =
+  document.querySelector(
+    '#service-preview-image'
+  )
+
+
+if (
+  previewImage
+  && serviceImages[service]
+) {
+
+  previewImage.src =
+    serviceImages[service]
+
+}
 
   const label =
   t(

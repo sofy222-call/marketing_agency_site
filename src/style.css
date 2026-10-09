@@ -874,30 +874,9 @@ p {
 }
 
 
-.service-preview-visual {
-  position: relative;
-
-  width: 100%;
-
-  aspect-ratio: 4 / 5;
-
-  overflow: hidden;
-
-  border:
-    1px solid
-    var(--color-line);
-
-  background:
-    linear-gradient(
-      145deg,
-      #FF2A1A,
-      #260503 60%,
-      #0A0A0A
-    );
-
-  transition:
-    background 350ms ease,
-    transform 350ms ease;
+.service-preview-visual::before,
+.service-preview-visual::after {
+  display: none;
 }
 
 
@@ -3951,4 +3930,183 @@ html[lang="kk"] .hero-title {
       clamp(27px, 2.4vw, 37px);
   }
 
+}
+/* =========================================
+   FINAL HERO VISUAL
+========================================= */
+
+.hero-object {
+  display: block;
+
+  width:
+    min(86%, 720px);
+
+  height: auto;
+
+  object-fit: contain;
+
+  background: none;
+
+  border: 0;
+
+  filter:
+    drop-shadow(
+      0 40px 80px
+      rgba(0, 0, 0, 0.32)
+    );
+}
+
+
+/* old decorative pseudo-elements */
+
+.hero-object::before,
+.hero-object::after {
+  display: none;
+}
+/* =========================================
+   FINAL SERVICE VISUALS
+========================================= */
+
+.service-preview-visual {
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+}
+
+
+.service-preview-visual::before,
+.service-preview-visual::after {
+  display: none;
+}
+
+
+.service-preview-visual[data-service="strategy"] {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.12)
+    ),
+    url('./assets/service-strategy.png');
+}
+
+
+.service-preview-visual[data-service="social"] {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.12)
+    ),
+    url('./assets/service-social.webp');
+}
+
+
+.service-preview-visual[data-service="performance"] {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.12)
+    ),
+    url('./assets/service-performance.webp');
+}
+
+
+.service-preview-visual[data-service="content"] {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.12)
+    ),
+    url('./assets/service-content.webp');
+}
+
+
+.service-preview-visual[data-service="digital"] {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.12)
+    ),
+    url('./assets/service-digital.webp');
+}
+/* =========================================
+   FINAL CASE VISUALS
+========================================= */
+
+.case-media-one,
+.case-media-two,
+.case-media-three {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.case-media-one {
+  background-image: url('./assets/case-01.webp');
+}
+
+.case-media-two {
+  background-image: url('./assets/case-02.webp');
+}
+
+.case-media-three {
+  background-image: url('./assets/case-03.webp');
+}
+/* =========================================
+   FINAL HERO IMAGE
+========================================= */
+
+.hero-object {
+  display: block;
+
+  width: min(86%, 720px);
+  height: auto;
+
+  object-fit: contain;
+
+  background: none;
+  border: 0;
+}
+
+.hero-object::before,
+.hero-object::after {
+  display: none;
+}
+/* =========================================
+   SERVICE PREVIEW IMAGE FIX
+========================================= */
+
+.service-preview-visual {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #050505;
+}
+
+
+.service-preview-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: #050505;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s ease;
+}
+
+
+.service-preview:hover
+.service-preview-image {
+  transform: scale(1.015);
 }
